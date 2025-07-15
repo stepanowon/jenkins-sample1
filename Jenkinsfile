@@ -23,7 +23,7 @@ pipeline {
         }
       }
       steps {
-        echo "qwer 디렉토리에 변경사항이 있을때만 빌드 실행"
+        echo "asdf 디렉토리에 변경사항이 있을때만 빌드 실행"
       }
     }
   }
