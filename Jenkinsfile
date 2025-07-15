@@ -4,7 +4,10 @@ pipeline {
   stages {
     stage('Build qwer') {
       when {
-        changeset "**/qwer/**"
+        anyOf {
+          changeset "**/qwer/**"
+          expression { return env.BUILD_NUMBER == '1' }
+        }
       }
       steps {
         echo "qwer 디렉토리에 변경사항이 있을때만 빌드 실행"
@@ -14,7 +17,10 @@ pipeline {
     }
     stage('Build asdf') {
       when {
-        changeset "**/asdf/**"
+        anyOf {
+          changeset "**/asdf/**"
+          expression { return env.BUILD_NUMBER == '1' }
+        }
       }
       steps {
         echo "qwer 디렉토리에 변경사항이 있을때만 빌드 실행"
