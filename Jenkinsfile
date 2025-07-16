@@ -18,12 +18,12 @@ pipeline {
     stage('Build asdf') {
       when {
         anyOf {
-          changeset "**/asdf/**"
+          changeset "**/b.txt"
           expression { return env.BUILD_NUMBER == '1' }
         }
       }
       steps {
-        echo "asdf 디렉토리에 변경사항이 있을때만 빌드 실행"
+        echo "b.txt 파일에 변경사항이 있을때만 빌드 실행"
       }
     }
   }
